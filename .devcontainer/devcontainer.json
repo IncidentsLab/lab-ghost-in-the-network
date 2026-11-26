@@ -1,0 +1,20 @@
+{
+  // IncidentLab lab: Ghost in the Network. The image holds the tools and the case's public evidence at /case.
+  // Open a Codespace from YOUR OWN copy of this template (see README), so it uses your free Codespaces quota.
+  "name": "IncidentLab lab: Ghost in the Network",
+  "image": "ghcr.io/incidentslab/lab-ghost-in-the-network:v1",
+  "remoteUser": "analyst",
+  "containerUser": "analyst",
+  // The smallest machine is enough, and it uses the free quota slowest (2 cores = 2 core-hours per hour).
+  "hostRequirements": { "cpus": 2 },
+  "postAttachCommand": "printf '\\nIncidentLab: the evidence is in /case (read-only).\\nStart with:  cd /case && less README_FIRST.txt\\nAnswers are checked on the IncidentLab site.\\n\\n'",
+  "customizations": {
+    "codespaces": { "openFiles": ["README.md"] },
+    "vscode": {
+      "settings": {
+        "terminal.integrated.cwd": "/case",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
